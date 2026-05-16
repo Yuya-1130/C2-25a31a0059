@@ -30,12 +30,13 @@ int main()
 	printf("%c\n", str[0]);
 
 	int count[4];
-	int hp = 100;
+	int hp = 100; // ※ メモリ上でcountの直後に配置される可能性がある
 
 	// count 配列の初期化
-	for (int i = 0; i <= 4; i++) {
-		count[i] = 0;
+	for (int i = 0; i <= 3; i++) {
+		count[i] = 0; // ※ i が 4 の時に hp の領域を破壊している可能性がある
 	}
+
 	//
 	//
 	// 敵やアイテムなどいろいろな処理を行う
